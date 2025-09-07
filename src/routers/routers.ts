@@ -9,11 +9,9 @@ export const getRouter = () => {
   router.post(
     "/",
     bodyParser.json(),
-    async (
-      req: Request<{}, {}, { tel: string; text: string }>,
-      res: Response
-    ) => {
-      sendMessage(req.body);
+    async (req: Request<{}, {}, { text: string }>, res: Response) => {
+      const text = req.body.text;
+      sendMessage(text);
       await res.send(200);
     }
   );
