@@ -9,9 +9,9 @@ app.use(express.json());
 // app.use(bodyParser.json());
 
 app.post("/", async (req, res) => {
-  const a = req.body;
-  // Устанавливаем статус 200, и сразу отправляем данные.
-  await res.status(200).send(a);
+  const data = req.body;
+  console.log(data); // <-- Добавьте эту строку
+  res.sendStatus(200);
 });
 app.get("/", bodyParser.json(), async (req, res) => {
   res.send("hello");
