@@ -12,7 +12,7 @@ app.post("/", async (req, res) => {
   res.send(200);
   console.log(a);
 });
-app.get("*", async (req, res) => {
+app.get("/", async (req, res) => {
   res.send("hello");
 });
 // app.use("/", getRouter());
