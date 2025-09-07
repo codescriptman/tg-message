@@ -7,8 +7,10 @@ const app = express();
 app.use(express.json());
 // app.use(bodyParser.json());
 
-app.post("*", async (req, res) => {
-  res.send(req.body);
+app.post("/", async (req, res) => {
+  const a = req.body;
+  res.send(200);
+  console.log(a);
 });
 app.get("*", async (req, res) => {
   res.send("hello");
