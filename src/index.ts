@@ -8,11 +8,7 @@ app.use(express.json());
 // app.use(bodyParser.json());
 
 app.all("*", (req, res) => {
-  console.log("--- Получен запрос от Telegram ---");
-  console.log(`Метод: ${req.method}`);
-  console.log(`Путь: ${req.path}`);
-  console.log("--- Конец запроса ---");
-  res.sendStatus(200);
+  res.send(req.body);
 });
 // app.use("/", getRouter());
 // app.post("*", async (req, res) => {
