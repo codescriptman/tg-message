@@ -1,6 +1,7 @@
 import express from "express";
 // import { getRouter } from "./routers/routers.js";
 import type { Request, Response } from "express";
+import bodyParser from "body-parser";
 
 const app = express();
 
@@ -12,7 +13,7 @@ app.post("/", async (req, res) => {
   res.send(200);
   res.send(a);
 });
-app.get("/", async (req, res) => {
+app.get("/", bodyParser.json(), async (req, res) => {
   res.send("hello");
 });
 // app.use("/", getRouter());
