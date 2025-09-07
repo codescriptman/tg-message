@@ -14,9 +14,5 @@ export const getRouter = () => {
     res.send(req.body);
   });
 
-  router.get("/", bodyParser.json(), async (req: Request, res: Response) =>
-    res.send("hello")
-  );
-
   return router;
 };

@@ -1,5 +1,6 @@
 import express from "express";
 import { getRouter } from "./routers/routers.js";
+import type { Request, Response } from "express";
 
 const app = express();
 
@@ -9,6 +10,10 @@ app.use("/", getRouter());
 //   console.log(req.body);
 //   res.send("Hello");
 // });
+
+app.get("/", async (req: Request, res: Response) => {
+  res.send("hello");
+});
 
 const PORT = process.env.PORT || 3003;
 
