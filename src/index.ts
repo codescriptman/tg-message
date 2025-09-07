@@ -7,8 +7,11 @@ const app = express();
 app.use(express.json());
 // app.use(bodyParser.json());
 
-app.all("*", (req, res) => {
+app.post("*", async (req, res) => {
   res.send(req.body);
+});
+app.get("*", async (req, res) => {
+  res.send("hello");
 });
 // app.use("/", getRouter());
 // app.post("*", async (req, res) => {
