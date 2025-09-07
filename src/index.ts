@@ -5,7 +5,7 @@ const app = express();
 
 app.use(express.json());
 
-app.use("/", getRouter());
+app.use("/text", getRouter());
 
 const PORT = process.env.PORT || 3003;
 
