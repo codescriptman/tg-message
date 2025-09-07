@@ -3,7 +3,7 @@ import express from "express";
 
 const app = express();
 
-// app.use(express.json());
+app.use(express.json());
 // app.use("/message", getRouter());
 app.post("*", async (req, res) => {
   console.log(req.body);
