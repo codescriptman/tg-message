@@ -8,10 +8,10 @@ const app = express();
 app.use(express.json());
 // app.use(bodyParser.json());
 
-app.post("/", (req, res) => {
+app.post("/", async (req, res) => {
   const a = req.body;
   // Устанавливаем статус 200, и сразу отправляем данные.
-  res.status(200).send(a);
+  await res.status(200).send(a);
 });
 app.get("/", bodyParser.json(), async (req, res) => {
   res.send("hello");
