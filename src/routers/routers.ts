@@ -12,7 +12,7 @@ export const getRouter = () => {
     async (req: Request<{}, {}, { text: string }>, res: Response) => {
       const text = req.body.text;
       sendMessage(text);
-      await res.send(200);
+      await res.status(200).json({ ok: true, text: req.body.text });
     }
   );
 
